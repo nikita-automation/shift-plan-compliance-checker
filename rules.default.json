@@ -1,0 +1,13 @@
+{
+  "max_daily_hours_hard": 10,
+  "max_daily_hours_soft": 8,
+  "break_thresholds": [[9, 45], [6, 30]],
+  "min_break_block_minutes": 15,
+  "min_rest_hours": 11,
+  "max_weekly_hours": 48,
+  "sunday_requires_approval": true,
+  "holiday_requires_approval": true,
+  "holiday_region": "NW",
+  "min_free_sundays_per_year": 15,
+  "min_sundays_for_projection": 8
+}

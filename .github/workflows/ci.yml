@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+        env:
+          PYTHONPATH: src
+
+      - name: Sample plan - report is produced and violations fail the run
+        run: |
+          python -m shiftcheck check data/sample/shift_plan.csv --format json --fail-on never > report.json
+          python -c "import json; r = json.load(open('report.json')); assert r['summary']['violations'] == 7, r['summary']"
+          if python -m shiftcheck check data/sample/shift_plan.csv > /dev/null; then echo "expected exit code 1" && exit 1; fi
+        env:
+          PYTHONPATH: src
