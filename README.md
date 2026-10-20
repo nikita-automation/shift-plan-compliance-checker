@@ -2,6 +2,8 @@
 
 [![ci](https://github.com/nikita-automation/shift-plan-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/nikita-automation/shift-plan-compliance-checker/actions/workflows/ci.yml)
 
+> **Kurz auf Deutsch:** Plausibilitätsprüfung für Schichtpläne nach dem Arbeitszeitgesetz (ArbZG): Tage über 10 Stunden, fehlende Pausen, zu kurze Ruhezeiten, Sonn- und Feiertagsarbeit, Doppelbuchungen. CSV rein, Bericht raus, nutzbar als CLI, CI-Gate oder Schritt in einem Workflow. Reines Python, erfundene Demodaten, keine Rechtsberatung.
+
 Plausibility checks for shift plans, modelled on the German working-time law (*Arbeitszeitgesetz*, ArbZG).
 Feed it a CSV export of a shift plan; it flags days over 10 hours, missing breaks, too little rest between
 shifts, unapproved Sunday and public-holiday work, double bookings and more — **before** the plan goes out.
@@ -148,3 +150,7 @@ produces exactly the planted findings. CI runs them on Python 3.9 and 3.12 and a
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+**Autor:** Nikita Rozumnyi · KI-Automatisierung für Unternehmen · [nikita-automation.de](https://nikita-automation.de) · [LinkedIn](https://www.linkedin.com/in/nikita-rozumniy) · [alle Projekte](https://github.com/nikita-automation)
